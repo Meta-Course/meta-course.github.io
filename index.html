@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meta Course - AI-Powered Educational Intelligence. Revolutionary platform for recording, analyzing, and studying lecture material.">
+    <meta name="keywords" content="AI education, lecture recording, study tools, educational technology">
+    <title>Meta Course | AI-Powered Educational Intelligence</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Fade-in animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Hover effect for cards */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Pulse animation for status badge */
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+        
+        /* Mobile menu transition */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Floating animation */
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">Meta Course</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-indigo-600 transition duration-300">Features</a>
+                    <a href="#architecture" class="text-gray-700 hover:text-indigo-600 transition duration-300">Architecture</a>
+                    <a href="#capabilities" class="text-gray-700 hover:text-indigo-600 transition duration-300">Capabilities</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-indigo-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#features" class="block px-3 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition duration-300">Features</a>
+                    <a href="#architecture" class="block px-3 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition duration-300">Architecture</a>
+                    <a href="#capabilities" class="block px-3 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition duration-300">Capabilities</a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-md transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 gradient-bg min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto text-center">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-lg px-6 py-3 rounded-full mb-8 fade-in">
+                <span class="text-3xl pulse">✅</span>
+                <span class="text-white font-semibold text-lg">100% Complete & Production-Ready</span>
+            </div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 fade-in leading-tight">
+                Meta Course
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-2xl sm:text-3xl lg:text-4xl text-white/90 mb-8 fade-in font-light">
+                AI-Powered Educational Intelligence
+            </p>
+            
+            <!-- Description -->
+            <p class="text-lg sm:text-xl text-white/80 mb-12 max-w-3xl mx-auto fade-in">
+                A sophisticated platform built to revolutionize how students record, analyze, and study lecture material. 
+                Harness the power of AI to transform your learning experience.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 fade-in">
+                <a href="#capabilities" class="w-64 bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300 shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                    <i class="fas fa-rocket"></i>
+                    <span>Launch App</span>
+                </a>
+                <a href="#architecture" class="w-64 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition duration-300 flex items-center justify-center space-x-2">
+                    <i class="fas fa-book"></i>
+                    <span>View Documentation</span>
+                </a>
+            </div>
+            
+            <!-- Floating Icon -->
+            <div class="mt-16 float">
+                <i class="fas fa-chevron-down text-white text-4xl opacity-70"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Executive Summary Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Executive Summary</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 sm:p-12 shadow-xl">
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    Meta Course is a sophisticated, AI-powered educational platform built to revolutionize how students 
+                    record, analyze, and study lecture material. It is a <strong>fully implemented React-TypeScript application</strong> 
+                    offering intelligent study tools, seamless audio processing, and a responsive whiteboard analysis system.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technical Architecture Section -->
+    <section id="architecture" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Technical Architecture</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Architecture Card 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover border-t-4 border-indigo-600">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fab fa-react text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Frontend Framework</h3>
+                    <p class="text-gray-600 text-lg">
+                        React 18 with TypeScript for type-safety and modern component architecture.
+                    </p>
+                </div>
+                
+                <!-- Architecture Card 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover border-t-4 border-purple-600">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Engine</h3>
+                    <p class="text-gray-600 text-lg">
+                        Integrated Gemini 2.5 Flash for multimodal analysis (audio & visual).
+                    </p>
+                </div>
+                
+                <!-- Architecture Card 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover border-t-4 border-indigo-600">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">State & Storage</h3>
+                    <p class="text-gray-600 text-lg">
+                        LocalStorage for robust data persistence without backend overhead.
+                    </p>
+                </div>
+                
+                <!-- Architecture Card 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover border-t-4 border-purple-600">
+                    <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cubes text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Modular Structure</h3>
+                    <p class="text-gray-600 text-lg">
+                        7 core components and 2 fully-typed service modules for scalability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Capabilities Section -->
+    <section id="capabilities" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Core Capabilities</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto rounded-full"></div>
+                <p class="text-xl text-gray-600 mt-6">Six powerful features designed to transform your learning experience</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Capability 1 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6">🎙</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Audio Intelligence</h3>
+                    <p class="text-gray-600 text-lg">
+                        High-fidelity lecture recording with immediate AI analysis and transcription.
+                    </p>
+                </div>
+                
+                <!-- Capability 2 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6">🧠</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Smart Study Engine</h3>
+                    <p class="text-gray-600 text-lg">
+                        Automatically generates quizzes, flashcards, and summaries from lecture content.
+                    </p>
+                </div>
+                
+                <!-- Capability 3 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6">📸</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Visual Integration</h3>
+                    <p class="text-gray-600 text-lg">
+                        Advanced whiteboard photo analysis that converts physical notes into digital text.
+                    </p>
+                </div>
+                
+                <!-- Capability 4 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6">🌍</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Polyglot Support</h3>
+                    <p class="text-gray-600 text-lg">
+                        Instant summarization and translation into 5 major languages.
+                    </p>
+                </div>
+                
+                <!-- Capability 5 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6">📊</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Predictive Exam Prep</h3>
+                    <p class="text-gray-600 text-lg">
+                        Probability-based algorithms that prioritize study topics based on exam likelihood.
+                    </p>
+                </div>
+                
+                <!-- Capability 6 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-6xl mb-6">📅</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Intelligent Planning</h3>
+                    <p class="text-gray-600 text-lg">
+                        Automated timeline generation and syllabus-based task organization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Feature Highlights Section -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Feature Highlights</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-mobile-alt text-white text-3xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Responsive User Experience</h3>
+                        <p class="text-gray-600 text-lg">
+                            Fully responsive UI/UX system designed for seamless operation on both mobile and desktop devices.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-tasks text-white text-3xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Advanced Task Management</h3>
+                        <p class="text-gray-600 text-lg">
+                            Specialized classification system for assignments versus announcements with intelligent categorization.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                    <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Privacy-First Security</h3>
+                        <p class="text-gray-600 text-lg">
+                            Privacy-focused implementation with local-first data handling. Your data never leaves your device.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="text-white">
+                    <div class="text-5xl font-black mb-2">7</div>
+                    <div class="text-xl font-light opacity-90">Core Components</div>
+                </div>
+                <div class="text-white">
+                    <div class="text-5xl font-black mb-2">2</div>
+                    <div class="text-xl font-light opacity-90">Service Modules</div>
+                </div>
+                <div class="text-white">
+                    <div class="text-5xl font-black mb-2">5</div>
+                    <div class="text-xl font-light opacity-90">Supported Languages</div>
+                </div>
+                <div class="text-white">
+                    <div class="text-5xl font-black mb-2">100%</div>
+                    <div class="text-xl font-light opacity-90">Production Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-6">Ready to Transform Your Learning?</h2>
+            <p class="text-xl text-gray-600 mb-10">
+                Join thousands of students already using Meta Course to revolutionize their study experience.
+            </p>
+            <a href="#capabilities" class="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-12 py-5 rounded-lg font-bold text-xl hover:shadow-2xl transition duration-300 transform hover:scale-105">
+                Get Started Now <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact" class="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Meta Course</span>
+                    </div>
+                    <p class="text-gray-400">
+                        AI-Powered Educational Intelligence for the modern student.
+                    </p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition duration-300">Features</a></li>
+                        <li><a href="#architecture" class="text-gray-400 hover:text-white transition duration-300">Architecture</a></li>
+                        <li><a href="#capabilities" class="text-gray-400 hover:text-white transition duration-300">Capabilities</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Meta Course. All rights reserved. Built with <i class="fas fa-heart text-red-500"></i> for students worldwide.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.remove('open');
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards and sections
+        document.querySelectorAll('.card-hover, section > div > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Add scroll event for navbar shadow
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.gradient-bg');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
