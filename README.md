@@ -47,11 +47,11 @@ Upload your syllabus to generate study timelines, track assignments, and organiz
 
 ### Key Technical Features
 
-- ✅ **Type-Safe Development**: Full TypeScript implementation for robust, maintainable code
-- ✅ **Privacy-First**: All recordings and notes stored locally on your device
-- ✅ **Multimodal Processing**: Handles both audio transcriptions and visual content
-- ✅ **Responsive Design**: Optimized for mobile, tablet, and desktop devices
-- ✅ **No Backend Required**: Runs entirely in the browser with external API calls only for processing
+- **Type-Safe Development**: Full TypeScript implementation for robust, maintainable code
+- **Privacy-First**: All recordings and notes stored locally on your device
+- **Multimodal Processing**: Handles both audio transcriptions and visual content
+- **Responsive Design**: Optimized for mobile, tablet, and desktop devices
+- **No Backend Required**: Runs entirely in the browser with external API calls only for processing
 
 ---
 
@@ -77,49 +77,6 @@ No installation required! Simply visit:
 2. **Process** - AI analyzes and transcribes the content
 3. **Generate** - Automatically create quizzes, flashcards, and summaries
 4. **Study** - Review with optimized, structured materials
-
----
-
-## 🛠️ Development
-
-### Project Structure
-
-```
-meta-course.github.io/
-├── index.html          # Main landing page
-├── styles.css          # Custom CSS animations and styles
-├── script.js           # Interactive functionality
-├── Features.jpg        # Feature showcase image
-└── README.md          # This file
-```
-
-### Technologies Used
-
-- **Frontend**: React 18, TypeScript
-- **Styling**: Tailwind CSS (CDN), Custom CSS
-- **Icons**: Font Awesome 6.5.1
-- **Fonts**: Google Fonts (Inter)
-- **Animations**: AOS (Animate On Scroll)
-- **AI**: Google Gemini 2.5 Flash API
-
-### Local Development
-
-1. Clone the repository:
-```bash
-git clone https://github.com/Meta-Course/meta-course.github.io.git
-cd meta-course.github.io
-```
-
-2. Open `index.html` in your browser or use a local server:
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx http-server
-```
-
-3. Navigate to `http://localhost:8000`
 
 ---
 
@@ -155,27 +112,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 📧 Contact
 
 **GitHub**: [@Meta-Course](https://github.com/Meta-Course)
 
 **Website**: [https://meta-course.github.io/](https://meta-course.github.io/)
-
----
-
-## 🙏 Acknowledgments
-
-- Google Gemini API for AI-powered content analysis
-- React team for the excellent framework
-- Tailwind CSS for the utility-first CSS framework
-- Font Awesome for the comprehensive icon library
-- AOS Library for scroll animations
 
 ---
 
